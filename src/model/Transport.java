@@ -15,10 +15,9 @@ public abstract class Transport implements Serviceable {
     public String getModelName() {
         return modelName;
     }
-
-    @Override
     public String getName() {
         return getModelName();
+
     }
 
     public int getWheelsCount() {
@@ -51,6 +50,7 @@ public abstract class Transport implements Serviceable {
     }
     @Override
     public void service() {
+        System.out.printf( "Облуживается %s%n",modelName);
         for (int i = 0; i < wheelsCount; i++) {
             updateTyre();
         }
